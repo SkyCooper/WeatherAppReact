@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import WeatherCard from "./WeatherCard";
 
 const Main = () => {
-  const [searchText, setSearchText] = useState("ankara");
+  const [searchText, setSearchText] = useState("istanbul");
   const [info, setInfo] = useState([]);
-  const [error, setError] = useState("Enter a city");
+  const [error, setError] = useState("Enter a city name");
   const [cityname, setCityname] = useState([]);
   let apiKey = process.env.REACT_APP_API_KEY;
   let units = "metric";
@@ -30,23 +30,28 @@ const Main = () => {
           weather,
         } = data;
         setInfo([{ name, temp, country, weather }, ...info]);
-      } 
+      }
     } catch (error) {
-      setTimeout(() => {
-        setError(" Wrong city");
-      }, 2000);
+      setError("İnvalid city name, try again.");
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (cityname.includes(searchText)) {
-      setError(`You already serch for ${searchText}`);
+    if (!searchText) {
+      setError("Please Enter a city");
     } else {
-      getCity();
-      setCityname([...cityname, searchText]);
+      if (cityname.includes(searchText)) {
+        setError(`You already search for ${searchText.toUpperCase()}`);
+      } else {
+        getCity();
+        setCityname([...cityname, searchText]);
+      }
+      setSearchText("");
+      setTimeout(() => {
+        setError("");
+      }, 2000);
     }
-    setSearchText("");
     setTimeout(() => {
       setError("");
     }, 2000);

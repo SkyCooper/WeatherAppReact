@@ -3,10 +3,10 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 :root {
   --bg_main: #5d840a;
-  --text_light: #fff;
+  --text_light: rgb(233, 218, 218);
   --text_med: #53627c;
   --text_dark: #1e2432;
-  --red: #ff1e42;
+  --red: #bcb640;
   --darkred: #c3112d;
   --orange: #ff8c00;
 }
