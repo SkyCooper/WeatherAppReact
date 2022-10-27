@@ -1,4 +1,5 @@
 import React from "react";
+import Icon from "../assests/MEMOJİ.png"
 
 const Header = () => {
   return (
@@ -6,7 +7,7 @@ const Header = () => {
       <div className="container">
         <center>
           <img
-            src="https://d1psgljc389n8q.cloudfront.net/bootcamps/logos/VX6tpIUJa"
+            src={Icon}
             alt="Bank logo"
             className="nav__logo"
             id="logo"

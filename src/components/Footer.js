@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="page-footer">
       <div className="container">
         <small>
-          Coded by <span>❤</span>FS Team
+          Coded by <span>❤</span>Cooper
         </small>
       </div>
     </footer>
